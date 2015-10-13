@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="LVB-YS-i5n">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <scenes>
+        <!--Day BittsVC-->
+        <scene sceneID="CtS-rA-C9T">
+            <objects>
+                <viewController id="LVB-YS-i5n" customClass="DayBittsVC" customModule="Bitts" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pHd-4k-OGt"/>
+                        <viewControllerLayoutGuide type="bottom" id="3Lw-sk-VQ5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bdc-N1-crn" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="AYJ-4u-oQ6" kind="modal" identifier="toAddBittVC" id="Fb1-Pr-0Hh"/>
+                        <segue destination="aPO-Zj-n6O" kind="modal" identifier="toViewBittVC" id="6YH-Da-rGL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="btX-cZ-eVz" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="238" y="335"/>
+        </scene>
+        <!--View BittVC-->
+        <scene sceneID="WSo-Ug-8Yf">
+            <objects>
+                <viewController id="aPO-Zj-n6O" customClass="ViewBittVC" customModule="Bitts" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WVH-25-B8i"/>
+                        <viewControllerLayoutGuide type="bottom" id="Zb2-17-Ifg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sZL-AM-Nfz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Learning Topic" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lwI-jZ-ha0">
+                                <rect key="frame" x="20" y="35" width="280" height="30"/>
+                                <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="What did you learn?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="v2v-RE-5nA">
+                                <rect key="frame" x="20" y="91" width="280" height="398"/>
+                                <color key="backgroundColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
+                                <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wTL-q9-FvR">
+                                <rect key="frame" x="20" y="495" width="65" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="8x6-AM-xrO"/>
+                                    <constraint firstAttribute="width" constant="65" id="F1b-xe-stB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="44"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" red="1" green="0.40000000000000002" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="iqe-bz-PIt" kind="unwind" unwindAction="unwindToViewController:" id="lge-xw-fqu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.303030303" green="0.303030303" blue="0.303030303" alpha="0.75" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="v2v-RE-5nA" firstAttribute="leading" secondItem="sZL-AM-Nfz" secondAttribute="leading" constant="20" id="5Gs-3g-zma"/>
+                            <constraint firstItem="Zb2-17-Ifg" firstAttribute="top" secondItem="wTL-q9-FvR" secondAttribute="bottom" constant="8" id="6RW-fF-etR"/>
+                            <constraint firstItem="lwI-jZ-ha0" firstAttribute="leading" secondItem="sZL-AM-Nfz" secondAttribute="leading" constant="20" id="Fob-99-1QW"/>
+                            <constraint firstItem="v2v-RE-5nA" firstAttribute="top" secondItem="lwI-jZ-ha0" secondAttribute="bottom" constant="26" id="Ing-MY-Eew"/>
+                            <constraint firstItem="lwI-jZ-ha0" firstAttribute="top" secondItem="WVH-25-B8i" secondAttribute="bottom" constant="15" id="TYR-V6-C5b"/>
+                            <constraint firstItem="wTL-q9-FvR" firstAttribute="top" secondItem="v2v-RE-5nA" secondAttribute="bottom" constant="6" id="V7Z-dW-RV2"/>
+                            <constraint firstAttribute="trailing" secondItem="v2v-RE-5nA" secondAttribute="trailing" constant="20" id="VPe-s3-EgR"/>
+                            <constraint firstAttribute="trailing" secondItem="lwI-jZ-ha0" secondAttribute="trailing" constant="20" id="X6N-aK-Etg"/>
+                            <constraint firstItem="wTL-q9-FvR" firstAttribute="leading" secondItem="sZL-AM-Nfz" secondAttribute="leading" constant="20" id="glN-dh-EJu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bittText" destination="v2v-RE-5nA" id="mtA-uk-OPa"/>
+                        <outlet property="bittTitle" destination="lwI-jZ-ha0" id="hCz-NS-ol3"/>
+                        <outlet property="cancelButton" destination="wTL-q9-FvR" id="QQj-LX-AeP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wWp-1J-IBT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="iqe-bz-PIt" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="705" y="683"/>
+        </scene>
+        <!--Add BittVC-->
+        <scene sceneID="0no-er-lcE">
+            <objects>
+                <viewController id="AYJ-4u-oQ6" customClass="AddBittVC" customModule="Bitts" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fog-AQ-9kX"/>
+                        <viewControllerLayoutGuide type="bottom" id="S8e-6d-dxB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PMa-kd-olo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="What did you learn?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kBa-w5-CXM">
+                                <rect key="frame" x="20" y="91" width="280" height="398"/>
+                                <color key="backgroundColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
+                                <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bco-1a-nB8">
+                                <rect key="frame" x="235" y="495" width="65" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="LfC-lH-p8e"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="44"/>
+                                <color key="tintColor" red="0.33333333329999998" green="0.85490196080000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" red="0.33333333329999998" green="0.85490196080000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addBittPressed:" destination="AYJ-4u-oQ6" eventType="touchUpInside" id="XK2-pz-ulS"/>
+                                    <segue destination="jdc-6o-4QT" kind="unwind" unwindAction="unwindToViewController:" id="78t-Qd-h30"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="What did you learn about?" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lJZ-0c-yuU">
+                                <rect key="frame" x="20" y="35" width="280" height="30"/>
+                                <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vmk-MW-3Tt">
+                                <rect key="frame" x="20" y="495" width="65" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="3cu-qI-7mo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="44"/>
+                                <color key="tintColor" red="1" green="0.40000000000000002" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" red="1" green="0.40000000000000002" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="jdc-6o-4QT" kind="unwind" unwindAction="unwindToViewController:" id="Tke-2U-3Xa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.303030303" green="0.303030303" blue="0.303030303" alpha="0.75" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="S8e-6d-dxB" firstAttribute="top" secondItem="vmk-MW-3Tt" secondAttribute="bottom" constant="8" id="64J-0w-LG5"/>
+                            <constraint firstItem="kBa-w5-CXM" firstAttribute="leading" secondItem="PMa-kd-olo" secondAttribute="leading" constant="20" id="8iP-II-nLY"/>
+                            <constraint firstItem="S8e-6d-dxB" firstAttribute="top" secondItem="bco-1a-nB8" secondAttribute="bottom" constant="8" id="BRr-Ar-dwq"/>
+                            <constraint firstItem="vmk-MW-3Tt" firstAttribute="top" secondItem="kBa-w5-CXM" secondAttribute="bottom" constant="6" id="Cxf-Nz-R5E"/>
+                            <constraint firstItem="bco-1a-nB8" firstAttribute="top" secondItem="kBa-w5-CXM" secondAttribute="bottom" constant="6" id="OE5-Wp-yEP"/>
+                            <constraint firstItem="kBa-w5-CXM" firstAttribute="top" secondItem="lJZ-0c-yuU" secondAttribute="bottom" constant="26" id="S0l-Y4-qfk"/>
+                            <constraint firstAttribute="trailing" secondItem="bco-1a-nB8" secondAttribute="trailing" constant="20" id="Wvc-IB-6bF"/>
+                            <constraint firstItem="lJZ-0c-yuU" firstAttribute="leading" secondItem="PMa-kd-olo" secondAttribute="leading" constant="20" id="g8K-eF-ju4"/>
+                            <constraint firstItem="vmk-MW-3Tt" firstAttribute="leading" secondItem="PMa-kd-olo" secondAttribute="leading" constant="20" id="huw-Vf-sKS"/>
+                            <constraint firstAttribute="trailing" secondItem="lJZ-0c-yuU" secondAttribute="trailing" constant="20" id="kWd-95-q5s"/>
+                            <constraint firstAttribute="trailing" secondItem="kBa-w5-CXM" secondAttribute="trailing" constant="20" id="mXn-nL-WHn"/>
+                            <constraint firstItem="lJZ-0c-yuU" firstAttribute="top" secondItem="fog-AQ-9kX" secondAttribute="bottom" constant="15" id="rXG-dn-7B0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bittText" destination="kBa-w5-CXM" id="MVW-nA-HFe"/>
+                        <outlet property="bittTitle" destination="lJZ-0c-yuU" id="uUj-Oo-63v"/>
+                        <outlet property="cancelButton" destination="vmk-MW-3Tt" id="qZW-dZ-A1M"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SS8-BV-s1y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="jdc-6o-4QT" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="705" y="20"/>
+        </scene>
+    </scenes>
+</document>
