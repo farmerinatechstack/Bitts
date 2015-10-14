@@ -1,10 +1,101 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="LVB-YS-i5n">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Cfl-yo-sNt">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
+        <!--Log InVC-->
+        <scene sceneID="yv9-tr-Kz0">
+            <objects>
+                <viewController id="Cfl-yo-sNt" customClass="LogInVC" customModule="Bitts" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="W3r-9m-ItW"/>
+                        <viewControllerLayoutGuide type="bottom" id="DkY-dD-Vbm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9vw-PY-0QG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VcP-Eu-qBd">
+                                <rect key="frame" x="79" y="314" width="163" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PXe-UH-zzR">
+                                <rect key="frame" x="79" y="361" width="163" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="map-qz-D0D">
+                                <rect key="frame" x="139" y="399" width="42" height="30"/>
+                                <state key="normal" title="Log In"/>
+                                <connections>
+                                    <action selector="logInPressed:" destination="Cfl-yo-sNt" eventType="touchUpInside" id="OlB-mV-cnh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bdp-SG-2if">
+                                <rect key="frame" x="133" y="471" width="55" height="30"/>
+                                <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <segue destination="X77-vr-unu" kind="modal" id="OqZ-Lg-EPn"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="passwordTextField" destination="PXe-UH-zzR" id="kV0-ku-PYt"/>
+                        <outlet property="usernameTextField" destination="VcP-Eu-qBd" id="048-ZJ-6Fw"/>
+                        <segue destination="LVB-YS-i5n" kind="modal" identifier="LogIn" id="fDq-kL-Xcy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gxg-lx-ghr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-292" y="335"/>
+        </scene>
+        <!--Sign UpVC-->
+        <scene sceneID="JEN-74-s8D">
+            <objects>
+                <viewController id="X77-vr-unu" customClass="SignUpVC" customModule="Bitts" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GB2-Tf-N9W"/>
+                        <viewControllerLayoutGuide type="bottom" id="6Fk-21-N4d"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wxN-Mk-S1g">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3JJ-di-23m">
+                                <rect key="frame" x="79" y="68" width="163" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HXM-dX-zXa">
+                                <rect key="frame" x="79" y="131" width="163" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mtu-oB-teU">
+                                <rect key="frame" x="133" y="190" width="55" height="30"/>
+                                <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <action selector="signUpPressed:" destination="X77-vr-unu" eventType="touchUpInside" id="a7W-j2-cH2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="passwordTextField" destination="HXM-dX-zXa" id="mib-Zs-Uf7"/>
+                        <outlet property="usernameTextField" destination="3JJ-di-23m" id="rCL-me-MNb"/>
+                        <segue destination="LVB-YS-i5n" kind="modal" identifier="SignUpLogIn" id="aAt-SS-v6O"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HIL-wa-xnz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-292" y="1083"/>
+        </scene>
         <!--Day BittsVC-->
         <scene sceneID="CtS-rA-C9T">
             <objects>
@@ -174,4 +265,7 @@
             <point key="canvasLocation" x="705" y="20"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="fDq-kL-Xcy"/>
+    </inferredMetricsTieBreakers>
 </document>

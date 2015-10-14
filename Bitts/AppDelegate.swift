@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 HKII Productions. All rights reserved.
 //
 
+import Bolts
+import Parse
 import UIKit
 
 @UIApplicationMain
@@ -15,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        Parse.setApplicationId(DBConstants.appID, clientKey: DBConstants.clientKey)
+        
         return true
     }
 
